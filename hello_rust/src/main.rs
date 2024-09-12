@@ -32,7 +32,7 @@ fn main() {
         add_undirected_edge(&mut graph, u, v, weight);
     }
 
-    let mst_cost = mst(&graph, 0);
+    let (mst_cost, _parent) = mst(&graph, 0);
 
     println!("MST cost: {}", mst_cost);
 }
