@@ -18,8 +18,8 @@ fibonacci:
 .L2:
     mv a0, a2
     ret
-    .size fibonacci, .-fibonacci
 
+.size fibonacci, .-fibonacci
 .section .rodata.str1.8,"aMS",@progbits,1
 .align 3
 
@@ -58,13 +58,13 @@ main:
     li a0, 0
     addi sp, sp, 32
     jr ra
-    .size main, .-main
-
-    .globl n
-    .section .sbss,"aw",@nobits
-    .align 2
-    .type n, @object
-    .size n, 4
     
+.size main, .-main
+.globl n
+.section .sbss,"aw",@nobits
+.align 2
+.type n, @object
+.size n, 4
+
 n:
     .zero 4

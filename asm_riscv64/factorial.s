@@ -15,8 +15,8 @@ factorial:
 .L2:
     sext.w a0,a2
     ret
-    .size factorial, .-factorial
-
+    
+.size factorial, .-factorial
 .section .rodata.str1.8,"aMS",@progbits,1
 .align 3
 
@@ -57,8 +57,8 @@ main:
     li a0, 0
     addi sp, sp, 32
     jr ra
-    .size main, .-main
-
+    
+.size main, .-main
 .globl n
 .section .sbss,"aw",@nobits
 .align 2
