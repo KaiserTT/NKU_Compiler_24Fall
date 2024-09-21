@@ -9,6 +9,6 @@
   - Dijkstra by KaiserTT✅
   - MST(Prim) by Ethannnn✅
 - Project 1
-  - 预备工作-汇编编程⭕
+  - 预备工作-汇编编程✅
   - 预备工作-LLVM IR 编程⭕
 - Project ?
