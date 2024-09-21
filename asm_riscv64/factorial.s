@@ -4,22 +4,26 @@
 factorial:
     li a2, 1
     li a3, 1
+
 .L1:
     beq a0, zero, .L2
     mul a2, a2, a3
     addi a3, a3, 1
     bgt a3, a0, .L2
     j .L1
+
 .L2:
     sext.w a0,a2
     ret
     .size factorial, .-factorial
 
-    .section .rodata.str1.8,"aMS",@progbits,1
-    .align 3
+.section .rodata.str1.8,"aMS",@progbits,1
+.align 3
+
 .LC0:
     .string "%d"
     .align 3
+    
 .LC1:
     .string "Factorial is: %d\n"
 

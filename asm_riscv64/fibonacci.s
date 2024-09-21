@@ -6,6 +6,7 @@ fibonacci:
     li a2, 1
     beq a0, zero, .L2
     li a3, 1
+
 .L1:
     beq a0, a3, .L2
     add a4, a1, a2
@@ -13,16 +14,19 @@ fibonacci:
     mv a2, a4
     addi a3, a3, 1
     j .L1
+
 .L2:
     mv a0, a2
     ret
     .size fibonacci, .-fibonacci
 
-    .section .rodata.str1.8,"aMS",@progbits,1
-    .align 3
+.section .rodata.str1.8,"aMS",@progbits,1
+.align 3
+
 .LC0:
     .string "%d"
     .align 3
+
 .LC1:
     .string "Fibonacci result is: %d\n"
 
@@ -61,5 +65,6 @@ main:
     .align 2
     .type n, @object
     .size n, 4
+    
 n:
     .zero 4
