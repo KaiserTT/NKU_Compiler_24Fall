@@ -1,17 +1,11 @@
-    .file "fibonacci.c"
-    .option nopic
-    .attribute arch, "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0"
-    .attribute unaligned_access, 0
-    .attribute stack_align, 16
-    .text
-    .align 1
-    .globl fibonacci
-    .type fibonacci, @function
+.globl fibonacci
+.type fibonacci, @function
+
 fibonacci:
     li a1, 0
     li a2, 1
     beq a0, zero, .L2
-    li a3, 2
+    li a3, 1
 .L1:
     beq a0, a3, .L2
     add a4, a1, a2
@@ -32,10 +26,11 @@ fibonacci:
 .LC1:
     .string "Fibonacci result is: %d\n"
 
-    .section .text.startup,"ax",@progbits
-    .align 1
-    .globl main
-    .type main, @function
+.section .text.startup,"ax",@progbits
+.align 1
+.globl main
+.type main, @function
+
 main:
     addi sp, sp, -32
     sd s0, 16(sp)
@@ -68,6 +63,3 @@ main:
     .size n, 4
 n:
     .zero 4
-
-    .ident "GCC: () 12.2.0"
-    .section .note.GNU-stack,"",@progbits

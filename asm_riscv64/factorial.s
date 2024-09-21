@@ -1,12 +1,6 @@
-    .file "factorial.c"
-    .option nopic
-    .attribute arch, "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0"
-    .attribute unaligned_access, 0
-    .attribute stack_align, 16
-    .text
-    .align 1
-    .globl factorial
-    .type factorial, @function
+.globl factorial
+.type factorial, @function
+
 factorial:
     li a2, 1
     li a3, 1
@@ -29,10 +23,11 @@ factorial:
 .LC1:
     .string "Factorial is: %d\n"
 
-    .section .text.startup,"ax",@progbits
-    .align 1
-    .globl main
-    .type main, @function
+.section .text.startup,"ax",@progbits
+.align 1
+.globl main
+.type main, @function
+
 main:
     addi sp, sp, -32
     sd s0, 16(sp)
@@ -60,13 +55,11 @@ main:
     jr ra
     .size main, .-main
 
-    .globl n
-    .section .sbss,"aw",@nobits
-    .align 2
-    .type n, @object
-    .size n, 4
+.globl n
+.section .sbss,"aw",@nobits
+.align 2
+.type n, @object
+.size n, 4
+
 n:
     .zero 4
-
-    .ident "GCC: () 12.2.0"
-    .section .note.GNU-stack,"",@progbits
