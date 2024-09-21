@@ -16,16 +16,16 @@ factorial:
         sext.w a0,a2
         ret
         
-    .size factorial, .-factorial
-    .section .rodata.str1.8,"aMS",@progbits,1
-    .align 3
+.size factorial, .-factorial
+.section .rodata.str1.8,"aMS",@progbits,1
+.align 3
 
-    .LC0:
-        .string "%d"
-        .align 3
-        
-    .LC1:
-        .string "Factorial is: %d\n"
+.LC0:
+    .string "%d"
+    .align 3
+    
+.LC1:
+    .string "Factorial is: %d\n"
 
 .section .text.startup,"ax",@progbits
 .align 1

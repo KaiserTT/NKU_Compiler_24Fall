@@ -19,16 +19,16 @@ fibonacci:
         mv a0, a2
         ret
 
-    .size fibonacci, .-fibonacci
-    .section .rodata.str1.8,"aMS",@progbits,1
+.size fibonacci, .-fibonacci
+.section .rodata.str1.8,"aMS",@progbits,1
+.align 3
+
+.LC0:
+    .string "%d"
     .align 3
 
-    .LC0:
-        .string "%d"
-        .align 3
-
-    .LC1:
-        .string "Fibonacci result is: %d\n"
+.LC1:
+    .string "Fibonacci result is: %d\n"
 
 .section .text.startup,"ax",@progbits
 .align 1
